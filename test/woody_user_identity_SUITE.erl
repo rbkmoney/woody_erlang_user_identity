@@ -13,7 +13,7 @@
 -export([
     put_get_ok_test/1,
     put_get_incomplete_ok_test/1,
-    override_error_test/1
+    put_missing_required_error_test/1
 ]).
 
 %%
@@ -23,7 +23,7 @@ all() ->
     [
         put_get_ok_test,
         put_get_incomplete_ok_test,
-        override_error_test
+        put_missing_required_error_test
     ].
 
 %%
@@ -61,15 +61,15 @@ put_get_incomplete_ok_test(_) ->
     Context = woody_user_identity:put(Identity, Context0),
     Identity = woody_user_identity:get(Context).
 
--spec override_error_test(_) -> _.
-override_error_test(_) ->
+-spec put_missing_required_error_test(_) -> _.
+
+put_missing_required_error_test(_) ->
     Context0 = woody_context:new(),
-    Identity = #{id => <<"UserID">>},
-    Context = woody_user_identity:put(Identity, Context0),
+    Identity = #{email => <<"test@test.com">>},
     ok = try
-        _ = woody_user_identity:put(Identity, Context),
-        ok
+        woody_user_identity:put(Identity, Context0),
+        error
     catch
-        throw:{override_attempt, id} ->
+        throw:{missing_required, id} ->
             ok
     end.

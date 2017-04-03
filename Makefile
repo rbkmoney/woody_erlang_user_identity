@@ -53,7 +53,7 @@ distclean: clean
 dialyze:
 	$(REBAR) dialyzer
 
-release: distclean
+release:
 	$(REBAR) as prod release
 
 lint:
