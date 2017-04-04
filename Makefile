@@ -35,9 +35,6 @@ compile: submodules rebar-update
 devrel: submodules
 	$(REBAR) release
 
-start: devrel
-	$(REBAR) run
-
 test: submodules
 	$(REBAR) do eunit, ct
 

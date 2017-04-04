@@ -35,6 +35,9 @@ build('woody_user_identity', 'docker-host', finalHook) {
         sh 'make wc_dialyze'
       }
     }
+    runStage('test') {
+      sh "make wc_test"
+    }
   }
 }
 
