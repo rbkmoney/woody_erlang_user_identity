@@ -1,0 +1,17 @@
+{application, woody_user_identity,[
+    {description, "A library to manipulate user identity through woody context"},
+    {vsn, "0.1.0"},
+    {registered, []},
+    {applications,
+        [
+            kernel,
+            stdlib,
+            woody
+        ]},
+    {env,[]},
+    {modules, []},
+
+    {maintainers, []},
+    {licenses, []},
+    {links, []}
+]}.
