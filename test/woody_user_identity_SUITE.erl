@@ -53,7 +53,8 @@ put_get_ok_test(_) ->
     Identity = #{
         id => <<"UserID">>,
         email => <<"UserEmail">>,
-        username => <<"UserName">>
+        username => <<"UserName">>,
+        realm => <<"TestRealm">>
     },
     Context = woody_user_identity:put(Identity, Context0),
     Identity = woody_user_identity:get(Context).
@@ -61,7 +62,7 @@ put_get_ok_test(_) ->
 -spec put_get_incomplete_ok_test(_) -> _.
 put_get_incomplete_ok_test(_) ->
     Context0 = woody_context:new(),
-    Identity = #{id => <<"UserID">>},
+    Identity = #{id => <<"UserID">>, realm => <<"TestRealm">>},
     Context = woody_user_identity:put(Identity, Context0),
     Identity = woody_user_identity:get(Context).
 
