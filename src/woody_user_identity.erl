@@ -7,9 +7,11 @@
 -type id()       :: binary().
 -type email()    :: binary().
 -type username() :: binary().
+-type realm() :: binary().
 
 -type user_identity() :: #{
     id := id(),
+    realm := realm(),
     email => email(),
     username => username()
 }.
@@ -17,6 +19,7 @@
 -export_type([id/0]).
 -export_type([email/0]).
 -export_type([username/0]).
+-export_type([realm/0]).
 -export_type([user_identity/0]).
 
 -define(PREFIX, <<"user-identity.">>).
@@ -83,6 +86,7 @@ get_user_identity(Context) ->
 get_keys_info() ->
     [
         {id, [{required, true}]},
+        {realm, [{required, true}]},
         {email, []},
         {username, []}
     ].

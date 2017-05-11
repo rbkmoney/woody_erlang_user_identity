@@ -5,9 +5,9 @@ SUBTARGETS = $(patsubst %,%/.git,$(SUBMODULES))
 UTILS_PATH := build_utils
 TEMPLATES_PATH := .
 
-BUILD_IMAGE_TAG := 55e987e74e9457191a5b4a7c5dc9e3838ae82d2b
+BUILD_IMAGE_TAG := ad7f71ebf9447c9339fea580d7f41d0f45752efa
 
-CALL_ANYWHERE := all submodules rebar-update compile xref lint dialyze test start devrel release clean distclean
+CALL_ANYWHERE := all submodules rebar-update compile xref lint dialyze test start clean distclean
 
 SERVICE_NAME := woody_user_identity
 
@@ -32,9 +32,6 @@ rebar-update:
 compile: submodules rebar-update
 	$(REBAR) compile
 
-devrel: submodules
-	$(REBAR) release
-
 test: submodules
 	$(REBAR) do eunit, ct
 
@@ -50,9 +47,5 @@ distclean: clean
 dialyze:
 	$(REBAR) dialyzer
 
-release:
-	$(REBAR) as prod release
-
 lint:
 	elvis rock
-
