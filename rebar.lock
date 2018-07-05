@@ -4,13 +4,17 @@
  {<<"cowlib">>,{pkg,<<"cowlib">>,<<"1.0.2">>},2},
  {<<"genlib">>,
   {git,"https://github.com/rbkmoney/genlib.git",
-       {ref,"82ff16f4314fc406dd90752467a08fe401b009ef"}},
-  1},
+       {ref,"e9e5aed04a870a064312590e798f89d46ce5585c"}},
+  0},
  {<<"hackney">>,{pkg,<<"hackney">>,<<"1.6.2">>},1},
  {<<"idna">>,{pkg,<<"idna">>,<<"1.2.0">>},2},
  {<<"metrics">>,{pkg,<<"metrics">>,<<"1.0.1">>},2},
  {<<"mimerl">>,{pkg,<<"mimerl">>,<<"1.0.2">>},2},
- {<<"ranch">>,{pkg,<<"ranch">>,<<"1.3.2">>},2},
+ {<<"ranch">>,{pkg,<<"ranch">>,<<"1.5.0">>},2},
+ {<<"rfc3339">>,
+  {git,"https://github.com/rbkmoney/rfc3339.git",
+       {ref,"ee3a1a6b1ee60219c49fdcaa9f36a25e91962bb5"}},
+  1},
  {<<"snowflake">>,
   {git,"https://github.com/rbkmoney/snowflake.git",
        {ref,"0a598108f6582affe3b4ae550fc5b9f2062e318a"}},
@@ -22,7 +26,7 @@
   1},
  {<<"woody">>,
   {git,"git@github.com:rbkmoney/woody_erlang.git",
-       {ref,"8f1f42e209a272570c5355599f908339cd097b5b"}},
+       {ref,"98469234e415214c1b197f08539612c20b3a3ee5"}},
   0}]}.
 [
 {pkg_hash,[
@@ -33,6 +37,6 @@
  {<<"idna">>, <<"AC62EE99DA068F43C50DC69ACF700E03A62A348360126260E87F2B54ECED86B2">>},
  {<<"metrics">>, <<"25F094DEA2CDA98213CECC3AEFF09E940299D950904393B2A29D191C346A8486">>},
  {<<"mimerl">>, <<"993F9B0E084083405ED8252B99460C4F0563E41729AB42D9074FD5E52439BE88">>},
- {<<"ranch">>, <<"E4965A144DC9FBE70E5C077C65E73C57165416A901BD02EA899CFD95AA890986">>},
+ {<<"ranch">>, <<"F04166F456790FEE2AC1AA05A02745CC75783C2BFB26D39FAF6AEFC9A3D3A58A">>},
  {<<"ssl_verify_fun">>, <<"28A4D65B7F59893BC2C7DE786DEC1E1555BD742D336043FE644AE956C3497FBE">>}]}
 ].
