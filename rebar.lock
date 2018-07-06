@@ -11,10 +11,7 @@
  {<<"metrics">>,{pkg,<<"metrics">>,<<"1.0.1">>},2},
  {<<"mimerl">>,{pkg,<<"mimerl">>,<<"1.0.2">>},2},
  {<<"ranch">>,{pkg,<<"ranch">>,<<"1.5.0">>},2},
- {<<"rfc3339">>,
-  {git,"https://github.com/rbkmoney/rfc3339.git",
-       {ref,"ee3a1a6b1ee60219c49fdcaa9f36a25e91962bb5"}},
-  1},
+ {<<"rfc3339">>,{pkg,<<"rfc3339">>,<<"0.2.2">>},1},
  {<<"snowflake">>,
   {git,"https://github.com/rbkmoney/snowflake.git",
        {ref,"0a598108f6582affe3b4ae550fc5b9f2062e318a"}},
@@ -26,7 +23,7 @@
   1},
  {<<"woody">>,
   {git,"git@github.com:rbkmoney/woody_erlang.git",
-       {ref,"98469234e415214c1b197f08539612c20b3a3ee5"}},
+       {ref,"354ac7664529ddecc07376bdaf4408cd8022fb61"}},
   0}]}.
 [
 {pkg_hash,[
@@ -38,5 +35,6 @@
  {<<"metrics">>, <<"25F094DEA2CDA98213CECC3AEFF09E940299D950904393B2A29D191C346A8486">>},
  {<<"mimerl">>, <<"993F9B0E084083405ED8252B99460C4F0563E41729AB42D9074FD5E52439BE88">>},
  {<<"ranch">>, <<"F04166F456790FEE2AC1AA05A02745CC75783C2BFB26D39FAF6AEFC9A3D3A58A">>},
+ {<<"rfc3339">>, <<"1552DF616ACA368D982E9F085A0E933B6688A3F4938A671798978EC2C0C58730">>},
  {<<"ssl_verify_fun">>, <<"28A4D65B7F59893BC2C7DE786DEC1E1555BD742D336043FE644AE956C3497FBE">>}]}
 ].
