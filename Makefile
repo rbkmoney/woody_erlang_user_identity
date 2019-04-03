@@ -5,7 +5,7 @@ SUBTARGETS = $(patsubst %,%/.git,$(SUBMODULES))
 UTILS_PATH := build_utils
 TEMPLATES_PATH := .
 
-BUILD_IMAGE_TAG := ee0028263b7663828614e3a01764a836b4018193
+BUILD_IMAGE_TAG := f3732d29a5e622aabf80542b5138b3631a726adb
 
 CALL_ANYWHERE := all submodules rebar-update compile xref lint dialyze test start clean distclean
 
