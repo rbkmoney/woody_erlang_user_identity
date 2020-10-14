@@ -4,8 +4,8 @@
 -export([put/2]).
 -export([get/1]).
 
--type id()       :: binary().
--type email()    :: binary().
+-type id() :: binary().
+-type email() :: binary().
 -type username() :: binary().
 -type realm() :: binary().
 
@@ -50,7 +50,7 @@ prepare_meta(Identity) ->
         fun({Key, Rules}, Acc) ->
             Required = is_required(Rules),
             case maps:get(Key, Identity, undefined) of
-                undefined when Required =:= false->
+                undefined when Required =:= false ->
                     Acc;
                 undefined ->
                     missing_required_error(Key);
@@ -70,7 +70,7 @@ get_user_identity(Context) ->
             MetaKey = encode_key(Key),
             Required = is_required(Rules),
             case woody_context:get_meta(MetaKey, Context) of
-                undefined when Required =:= false->
+                undefined when Required =:= false ->
                     Acc;
                 undefined ->
                     missing_required_error(Key);
