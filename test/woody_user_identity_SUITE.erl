@@ -2,7 +2,6 @@
 
 -include_lib("common_test/include/ct.hrl").
 
-
 %% common test API
 -export([
     all/0,
@@ -37,7 +36,7 @@ all() ->
 -spec init_per_suite(_) -> _.
 init_per_suite(C) ->
     {ok, Apps} = application:ensure_all_started(woody),
-    [{apps, Apps}|C].
+    [{apps, Apps} | C].
 
 -spec end_per_suite(_) -> _.
 end_per_suite(C) ->
@@ -70,21 +69,23 @@ put_get_incomplete_ok_test(_) ->
 put_missing_required_error_test(_) ->
     Context0 = woody_context:new(),
     Identity = #{email => <<"test@test.com">>},
-    ok = try
-        woody_user_identity:put(Identity, Context0),
-        error
-    catch
-        throw:{missing_required, id} ->
-            ok
-    end.
+    ok =
+        try
+            woody_user_identity:put(Identity, Context0),
+            error
+        catch
+            throw:{missing_required, id} ->
+                ok
+        end.
 
 -spec get_missing_required_error_test(_) -> _.
 get_missing_required_error_test(_) ->
     Context = woody_context:new(),
-    ok = try
-        woody_user_identity:get(Context),
-        error
-    catch
-        throw:{missing_required, id} ->
-            ok
-    end.
+    ok =
+        try
+            woody_user_identity:get(Context),
+            error
+        catch
+            throw:{missing_required, id} ->
+                ok
+        end.
