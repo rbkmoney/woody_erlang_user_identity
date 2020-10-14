@@ -7,7 +7,7 @@ TEMPLATES_PATH := .
 
 BUILD_IMAGE_TAG := cd38c35976f3684fe7552533b6175a4c3460e88b
 
-CALL_ANYWHERE := all submodules rebar-update compile xref lint dialyze test start clean distclean
+CALL_ANYWHERE := all submodules rebar-update compile xref lint dialyze test clean distclean check_format format
 
 SERVICE_NAME := woody_user_identity
 
@@ -49,3 +49,9 @@ dialyze:
 
 lint:
 	elvis rock
+
+check_format:
+	$(REBAR) fmt -c
+
+format:
+	$(REBAR) fmt -w
